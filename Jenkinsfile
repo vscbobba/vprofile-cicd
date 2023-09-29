@@ -4,7 +4,12 @@ pipeline {
  stages{
    stage('git chekcout'){
       steps{
-        git branch: 'main' , url: 'https://github.com/vscbobba/vprofile-cicd.git'
+        git branch: 'master' , url: 'https://github.com/vscbobba/vprofile-cicd.git'
+      }
+   }
+   stage('build') {
+      steps{
+         sh 'mvn install'
       }
    }
  }
